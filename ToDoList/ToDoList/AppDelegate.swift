@@ -20,11 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         window?.makeKeyAndVisible()
         
-        
+        let toDoController = ToDoListViewController(style: UITableView.Style.plain)
+        let navController = UINavigationController(rootViewController: toDoController)
                 
-        window?.rootViewController = ToDoListViewController(style: UITableView.Style.plain)
-        
-        
+        window?.rootViewController = navController
         
         return true
     }
