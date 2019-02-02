@@ -12,33 +12,15 @@ class ToDoListViewController: UITableViewController {
     
     let cellId = "cellId"
     var tasks: [Task] = []
-    
-    // Should very well use custom delegation
-    func configureTask(cell: TaskCell) {
-        print("caveman")
-        print("indexPath: \(tableView.indexPath(for: cell))")
-        guard let indexPath = tableView.indexPath(for: cell) else { return }
-        
-        let task = tasks[indexPath.row]
-        let hasCompleted = task.hasCompleted
-        let willComplete = !hasCompleted
-        
-        tasks[indexPath.row].hasCompleted = willComplete
-        print("willComplete: \(willComplete)")
-        cell.accessoryView?.tintColor = willComplete ? UIColor.defaultRed : UIColor.lightGray
-        
-    }
-    
+
 //-----------------------------------------------
     // MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         setUpNavBar()
 
-        
         tableView.register(TaskCell.self, forCellReuseIdentifier: cellId)
     }
     
@@ -101,11 +83,29 @@ class ToDoListViewController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
        
     }
+
+//-----------------------------------------------
+    // MARK: Helpers
     
+    // Should very well use custom delegation
+    func configureTask(cell: TaskCell) {
+        
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        
+        let task = tasks[indexPath.row]
+        let hasCompleted = task.hasCompleted
+        let willComplete = !hasCompleted
+        
+        tasks[indexPath.row].hasCompleted = willComplete
+        print("willComplete: \(willComplete)")
+        cell.accessoryView?.tintColor = willComplete ? UIColor.defaultRed : UIColor.lightGray
+        
+    }
     
 }
 
-
+//-----------------------------------------------
+// MARK: Color Extensions
 extension UIColor {
     
     static let divisor: CGFloat = 255

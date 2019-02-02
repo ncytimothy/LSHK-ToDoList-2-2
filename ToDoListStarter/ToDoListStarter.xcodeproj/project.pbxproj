@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		C45E73A622052FAF0009214D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45E73A522052FAF0009214D /* AppDelegate.swift */; };
-		C45E73A822052FAF0009214D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45E73A722052FAF0009214D /* ViewController.swift */; };
+		C45E73A822052FAF0009214D /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45E73A722052FAF0009214D /* ToDoListViewController.swift */; };
 		C45E73AB22052FAF0009214D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45E73A922052FAF0009214D /* Main.storyboard */; };
 		C45E73AD22052FAF0009214D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C45E73AC22052FAF0009214D /* Assets.xcassets */; };
 		C45E73B022052FAF0009214D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C45E73AE22052FAF0009214D /* LaunchScreen.storyboard */; };
+		C45E73B8220531630009214D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45E73B7220531630009214D /* Task.swift */; };
+		C45E73BA220531800009214D /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45E73B9220531800009214D /* TaskCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C45E73A222052FAF0009214D /* ToDoListStarter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoListStarter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C45E73A522052FAF0009214D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C45E73A722052FAF0009214D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C45E73A722052FAF0009214D /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		C45E73AA22052FAF0009214D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C45E73AC22052FAF0009214D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C45E73AF22052FAF0009214D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C45E73B122052FAF0009214D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C45E73B7220531630009214D /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		C45E73B9220531800009214D /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				C45E73A522052FAF0009214D /* AppDelegate.swift */,
-				C45E73A722052FAF0009214D /* ViewController.swift */,
+				C45E73A722052FAF0009214D /* ToDoListViewController.swift */,
+				C45E73B7220531630009214D /* Task.swift */,
+				C45E73B9220531800009214D /* TaskCell.swift */,
 				C45E73A922052FAF0009214D /* Main.storyboard */,
 				C45E73AC22052FAF0009214D /* Assets.xcassets */,
 				C45E73AE22052FAF0009214D /* LaunchScreen.storyboard */,
@@ -135,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C45E73A822052FAF0009214D /* ViewController.swift in Sources */,
+				C45E73BA220531800009214D /* TaskCell.swift in Sources */,
+				C45E73A822052FAF0009214D /* ToDoListViewController.swift in Sources */,
+				C45E73B8220531630009214D /* Task.swift in Sources */,
 				C45E73A622052FAF0009214D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,6 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // 1. Create a window
+        
+        // 2. Make the window key and visible
+        
+        // 3. Create an instance of ToDoListViewController with UITableView.Style.plain
+        
+        // 4. Create an instance of navigation controller with rootViewController
+        
+        // 5. Use UIApplication.share (shared singleton instance) to apply ".lightContent" status bar
+        
         return true
     }
 
