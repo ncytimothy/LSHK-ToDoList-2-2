@@ -6,10 +6,6 @@
 //  Copyright © 2019 timothyng. All rights reserved.
 //
 
-//TODO: Add Custom Delegation Code
-// TODO: Handle Add Task
-// TODO: Handle the change state of the task being completed
-
 import UIKit
 
 class ToDoListViewController: UITableViewController {
@@ -30,7 +26,6 @@ class ToDoListViewController: UITableViewController {
         tasks[indexPath.row].hasCompleted = willComplete
         print("willComplete: \(willComplete)")
         cell.accessoryView?.tintColor = willComplete ? UIColor.defaultRed : UIColor.lightGray
-        
         
     }
     
@@ -79,8 +74,6 @@ class ToDoListViewController: UITableViewController {
         cell.link = self
         return cell
     }
-    
-    
     
 //-----------------------------------------------
     // MARK: Actions
