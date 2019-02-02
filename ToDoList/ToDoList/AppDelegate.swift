@@ -22,9 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let toDoController = ToDoListViewController(style: UITableView.Style.plain)
         let navController = UINavigationController(rootViewController: toDoController)
+        
                 
         window?.rootViewController = navController
         
+        UIApplication.shared.statusBarStyle = .lightContent
+
         return true
     }
 

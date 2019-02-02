@@ -15,6 +15,24 @@ import UIKit
 class ToDoListViewController: UITableViewController {
     
     let cellId = "cellId"
+    var tasks: [Task] = []
+    
+    // Should very well use custom delegation
+    func configureTask(cell: TaskCell) {
+        print("caveman")
+        print("indexPath: \(tableView.indexPath(for: cell))")
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        
+        let task = tasks[indexPath.row]
+        let hasCompleted = task.hasCompleted
+        let willComplete = !hasCompleted
+        
+        tasks[indexPath.row].hasCompleted = willComplete
+        print("willComplete: \(willComplete)")
+        cell.accessoryView?.tintColor = willComplete ? UIColor.defaultRed : UIColor.lightGray
+        
+        
+    }
     
 //-----------------------------------------------
     // MARK: Lifecycle
@@ -24,6 +42,7 @@ class ToDoListViewController: UITableViewController {
         
         
         setUpNavBar()
+
         
         tableView.register(TaskCell.self, forCellReuseIdentifier: cellId)
     }
@@ -43,32 +62,53 @@ class ToDoListViewController: UITableViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Task", style: .plain, target: self, action: #selector(handleAddTask))
     }
+    
+    
+   
 
 //-----------------------------------------------
     // MARK: UITableView Delegate Methods (Data Source and Delegate)
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return tasks.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TaskCell
-        
+        cell.textLabel?.text = tasks[indexPath.row].taskName
+        cell.link = self
         return cell
     }
-   
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 500
-    }
+    
+    
     
 //-----------------------------------------------
-    // MARK: UITableView Delegate Methods (Data Source and Delegate)
+    // MARK: Actions
     
     @objc func handleAddTask() {
-        print("handling add task...")
-        let alert = UIAlertController(title: "Add a new task", message: "What do you need to work on?", preferredStyle: .actionSheet)
+            print("handling add task...")
+            let alert = UIAlertController(title: "Add a new task", message: "What do you need to work on?", preferredStyle: .alert)
+            let confirmAction = UIAlertAction(title: "Confirm", style: .default) { (action) in
+                guard let taskName = alert.textFields?[0].text else { return }
+                
+            let trimmedString = taskName.trimmingCharacters(in: .whitespaces)
+                
+            let task = Task(taskName: trimmedString, hasCompleted: false)
+            self.tasks.append(task)
+                
+            self.tableView.reloadData()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        
+        alert.addTextField()
+        alert.textFields?[0].autocapitalizationType = .sentences
+        alert.addAction(cancelAction)
+        alert.addAction(confirmAction)
+        self.present(alert, animated: true, completion: nil)
        
     }
+    
     
 }
 

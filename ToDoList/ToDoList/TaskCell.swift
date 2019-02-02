@@ -10,7 +10,8 @@ import UIKit
 
 class TaskCell: UITableViewCell {
     
-//    var link:
+// This is not the best way to do it, but will do for our MVP
+    var link: ToDoListViewController?
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -35,7 +36,7 @@ class TaskCell: UITableViewCell {
     
     @objc private func handleTaskCheck() {
         print("Marking task as checked")
-        
+        link?.configureTask(cell: self)
     }
     
     
