@@ -26,6 +26,7 @@
 		C45E73B122052FAF0009214D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C45E73B7220531630009214D /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		C45E73B9220531800009214D /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		C45E73BB220532520009214D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +43,7 @@
 		C45E739922052FAF0009214D = {
 			isa = PBXGroup;
 			children = (
+				C45E73BB220532520009214D /* README.md */,
 				C45E73A422052FAF0009214D /* ToDoListStarter */,
 				C45E73A322052FAF0009214D /* Products */,
 			);
